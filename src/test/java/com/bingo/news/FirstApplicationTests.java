@@ -1,4 +1,4 @@
-package com.bingo.first;
+package com.bingo.news;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

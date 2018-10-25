@@ -1,4 +1,4 @@
-package com.bingo.first.util;
+package com.bingo.news.util;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

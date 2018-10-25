@@ -1,7 +1,9 @@
-package com.bingo.first.controller;
+package com.bingo.news.controller;
 
-import com.bingo.first.domain.Customer;
-import com.bingo.first.domain.CustomerRepository;
+import com.bingo.news.domain.Customer;
+import com.bingo.news.domain.CustomerRepository;
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
     private static final String TAG = "BC-GreetingController : ";
+    private Log mLog = LogFactory.getLog(GreetingController.class);
+
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -21,6 +25,7 @@ public class GreetingController {
     @RequestMapping("/greeting")
     public Customer greeting(@RequestParam(value="name", defaultValue="World") String name) {
         Customer customer = customerRepository.findByName("zengbin");
+        mLog.info("-->Customer: " + customer.getUserId());
         return customer;
     }
 

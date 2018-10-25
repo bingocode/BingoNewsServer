@@ -1,6 +1,8 @@
-package com.bingo.first.config;
+package com.bingo.news.config;
 
 import org.apache.catalina.filters.RemoteIpFilter;
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +13,8 @@ import java.io.IOException;
 
 @Configuration
 public class WebConfiguration {
+    private Log mLog = LogFactory.getLog(WebConfiguration.class);
+
     @Bean
     public RemoteIpFilter remoteIpFilter() {
         return new RemoteIpFilter();
@@ -40,6 +44,7 @@ public class WebConfiguration {
             // TODO Auto-generated method stub
             HttpServletRequest request = (HttpServletRequest) srequest;
             System.out.println("this is MyFilter,url :"+request.getRequestURI());
+            mLog.info("this is MyFilter,url "+request.getRequestURI());
             filterChain.doFilter(srequest, sresponse);
         }
 

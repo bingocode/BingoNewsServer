@@ -1,4 +1,4 @@
-package com.bingo.first.domain;
+package com.bingo.news.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

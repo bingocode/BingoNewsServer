@@ -1,4 +1,4 @@
-package com.bingo.first;
+package com.bingo.news;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
